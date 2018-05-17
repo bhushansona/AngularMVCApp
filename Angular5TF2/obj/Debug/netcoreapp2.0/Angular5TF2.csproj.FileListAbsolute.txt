@@ -1,0 +1,11 @@
+C:\Users\inbsona\Documents\Visual Studio 2017\Projects\Angular5TF2\Angular5TF2\bin\Debug\netcoreapp2.0\Angular5TF2.deps.json
+C:\Users\inbsona\Documents\Visual Studio 2017\Projects\Angular5TF2\Angular5TF2\bin\Debug\netcoreapp2.0\Angular5TF2.runtimeconfig.json
+C:\Users\inbsona\Documents\Visual Studio 2017\Projects\Angular5TF2\Angular5TF2\bin\Debug\netcoreapp2.0\Angular5TF2.runtimeconfig.dev.json
+C:\Users\inbsona\Documents\Visual Studio 2017\Projects\Angular5TF2\Angular5TF2\bin\Debug\netcoreapp2.0\Angular5TF2.dll
+C:\Users\inbsona\Documents\Visual Studio 2017\Projects\Angular5TF2\Angular5TF2\bin\Debug\netcoreapp2.0\Angular5TF2.pdb
+C:\Users\inbsona\Documents\Visual Studio 2017\Projects\Angular5TF2\Angular5TF2\obj\Debug\netcoreapp2.0\Angular5TF2.csproj.CoreCompileInputs.cache
+C:\Users\inbsona\Documents\Visual Studio 2017\Projects\Angular5TF2\Angular5TF2\obj\Debug\netcoreapp2.0\Angular5TF2.AssemblyInfoInputs.cache
+C:\Users\inbsona\Documents\Visual Studio 2017\Projects\Angular5TF2\Angular5TF2\obj\Debug\netcoreapp2.0\Angular5TF2.AssemblyInfo.cs
+C:\Users\inbsona\Documents\Visual Studio 2017\Projects\Angular5TF2\Angular5TF2\obj\Debug\netcoreapp2.0\Angular5TF2.dll
+C:\Users\inbsona\Documents\Visual Studio 2017\Projects\Angular5TF2\Angular5TF2\obj\Debug\netcoreapp2.0\Angular5TF2.pdb
+C:\Users\inbsona\Documents\Visual Studio 2017\Projects\Angular5TF2\Angular5TF2\obj\Debug\netcoreapp2.0\Angular5TF2.csprojResolveAssemblyReference.cache

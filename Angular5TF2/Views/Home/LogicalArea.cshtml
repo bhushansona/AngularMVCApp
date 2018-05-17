@@ -1,0 +1,155 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Search filter criterias -->
+<div id="searchCriterias">
+</div>
+
+<!-- Bootstrap datatable for Logical Area Mapping -->
+<div id="divLogicalAreaMapping" class="col-md-12">
+    <div class="card">
+        <div class="card-block">
+            <div class="card-header">
+                <h4 class="card-title">Logical Area Mapping Details</h4>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table id="tblLogicalAreaMapping" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Logical Area</th>
+                        <th>Created By</th>
+                        <th>Created DateTime</th>
+                        <th>Modified By</th>
+                        <th>Modified DateTime</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap modal popup for Search filter -->
+<div class="modal fade bd-example-modal-lg" id="LogicalAreaFilterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Logical Area Search</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group row">
+                    <label class="col-md-3">Logical Area Name</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="txtLogicalAreaNameFilter" name="text" />
+                    </div>
+
+                    <div class="col-md-4">
+                        <select id="drpLogicalAreaNameOperands" class="form-control">
+                            <option value="0" selected>Operands</option>
+                            <option value="1">=</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-3">Created By</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="txtCreatedByFilter" name="text" />
+                    </div>
+
+                    <div class="col-md-4">
+                        <select id="drpCreatedByOperands" class="form-control">
+                            <option value="0" selected>Operands</option>
+                            <option value="1">=</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-3">Created Date</label>
+                    <div class='input-group date col-md-4' id='divCreatedDateFilter'>
+                        <input id="txtCreatedDate" type='text' class="form-control" readonly />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+
+                    <input id="dateRangeCreatedDate" class="form-control col-md-4" type="text" name="daterange" style="display:none;" />
+
+                    <div class="col-md-4">
+                        <select id="drpCreatedDateOperands" class="form-control">
+                            <option value="0" selected>Operands</option>
+                            <option value="1">=</option>
+                            <option value="2">></option>
+                            <option value="3"><</option>
+                            <option value="4">between</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-3">Modified By</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="txtModifiedByFilter" name="text" />
+                    </div>
+
+                    <div class="col-md-4">
+                        <select id="drpModifiedByOperands" class="form-control">
+                            <option value="0" selected>Operands</option>
+                            <option value="1">=</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-3">Modified Date</label>
+                    <div class='input-group date col-md-4' id='divModifiedDateFilter'>
+                        <input id="txtModifiedDate" type='text' class="form-control" readonly />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+
+                    <input id="dateRangeModifiedDate" class="form-control col-md-4" type="text" name="daterange" style="display:none;" />
+
+                    <div class="col-md-4">
+                        <select id="drpModifiedDateOperands" class="form-control">
+                            <option value="0" selected>Operands</option>
+                            <option value="1">=</option>
+                            <option value="2">></option>
+                            <option value="3"><</option>
+                            <option value="4">between</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="vi-button-popup" id="btnLogicalAreaSearch">
+                    <i class="fas fa-search vi-button-icon"></i>
+                    <text class="vi-button-vertical">Search</text>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Button -->
+<div align="center">
+    <nav class="buttonbar-bottom fixed-bottom">
+        <button class="vi-button" data-toggle="modal" data-target="#LogicalAreaFilterModal">
+            <i class="fas fa-search vi-button-icon"></i>
+            <text class="vi-button-vertical">Advance Search</text>
+        </button>
+
+        <button class="vi-button" id="btnLogicalAreaBack">
+            <i class="fas fa-step-backward vi-button-icon"></i>
+            <text class="vi-button-vertical">Back</text>
+        </button>
+    </nav>
+</div>
+<script src="~/js/rsb/LogicalAreajs.js"></script>

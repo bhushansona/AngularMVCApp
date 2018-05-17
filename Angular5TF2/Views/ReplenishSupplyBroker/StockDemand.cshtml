@@ -1,0 +1,199 @@
+﻿@model Vanderlande.RSB.ReplenishSupplyBroker.Web.Domain.ViewModels.StockDemandViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Bootstrap datatable for Logical Area Mapping -->
+<div id="divStockDemandRecords" class="col-md-12">
+    <div class="card">
+        <div class="card-block">
+            <div class="card-header">
+                <h4 class="card-title">Stock Demand Details</h4>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table id="tblStockDemandRecords" class="display" style="width:100%"></table>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap modal popup for Search filter -->
+<div class="modal fade bd-example-modal-lg" id="StockDemandRecordsFilterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Stock Demand Records Search</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group row">
+                    <label class="col-md-3">Sku Variant</label>
+                    <div class="col-md-4">
+                        <select id="drpSkuvariantOperands" class="form-control">
+                            <option value="0" selected>Operands</option>
+                            <option value="1">=</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="txtSkuVariant" name="text" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3">Target Physical Area</label>
+                    <div class="col-md-4">
+                        <select id="drpTargetphysicalareaOperands" class="form-control">
+                            <option value="0" selected>Operands</option>
+                            <option value="1">=</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="txtTargetPhysicalArea" name="text" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3">Amount</label>
+                    <div class="col-md-4">
+                        <select id="drpAmountOperands" class="form-control">
+                            <option value="0" selected>Operands</option>
+                            <option value="1">=</option>
+                            <option value="2">></option>
+                            <option value="3"><</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="txtAmount" name="text" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3">TSU Type</label>
+                    <div class="col-md-4">
+                        <select id="drpTsutypeOperands" class="form-control">
+                            <option value="0" selected>Operands</option>
+                            <option value="1">=</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="txtTsuType" name="text" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3">Stock Demand Group</label>
+                    <div class="col-md-4">
+                        <select id="drpStockdemandgroupOperands" class="form-control">
+                            <option value="0" selected>Operands</option>
+                            <option value="1">=</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="txtStockDemandGroup" name="text" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3">Created By</label>
+                    <div class="col-md-4">
+                        <select id="drpCreatedByOperands" class="form-control">
+                            <option value="0" selected>Operands</option>
+                            <option value="1">=</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="txtCreatedBy" name="text" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3">Modified By</label>
+                    <div class="col-md-4">
+                        <select id="drpModifiedByOperands" class="form-control">
+                            <option value="0" selected>Operands</option>
+                            <option value="1">=</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="txtModifiedBy" name="text" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3">Created Date</label>
+                    <div class="col-md-4">
+                        <select id="drpCreatedDateTimeDateOperands" class="form-control">
+                            <option value="0" selected>Operands</option>
+                            <option value="1">=</option>
+                            <option value="2">></option>
+                            <option value="3"><</option>
+                            <option value="4">between</option>
+                        </select>
+                    </div>
+                    <div class='input-group date col-md-4' id='divCreatedDateFilter'>
+                        <input id="txtCreatedDate" type='text' class="form-control" readonly />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+
+                    <input id="dateRangeCreatedDate" class="form-control col-md-4" type="text" name="daterange" style="display:none;" />
+
+
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3">Modified Date</label>
+                    <div class="col-md-4">
+                        <select id="drpModifiedDateTimeDateOperands" class="form-control">
+                            <option value="0" selected>Operands</option>
+                            <option value="1">=</option>
+                            <option value="2">></option>
+                            <option value="3"><</option>
+                            <option value="4">between</option>
+                        </select>
+                    </div>
+                    <div class='input-group date col-md-4' id='divModifiedDateFilter'>
+                        <input id="txtModifiedDate" type='text' class="form-control" readonly />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+
+                    <input id="dateRangeModifiedDate" class="form-control col-md-4" type="text" name="daterange" style="display:none;" />
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3">Required Finish DateTime</label>
+                    <div class="col-md-4">
+                        <select id="drpRequiredFinishDateTimeDateOperands" class="form-control">
+                            <option value="0" selected>Operands</option>
+                            <option value="1">=</option>
+                            <option value="2">></option>
+                            <option value="3"><</option>
+                            <option value="4">between</option>
+                        </select>
+                    </div>
+                    <div class='input-group date col-md-4' id='divRequiredFinishDateTime'>
+                        <input id="txtRequiredFinishDateTime" type='text' class="form-control" readonly />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+
+                    <input id="dateRangeRequiredFinishDateTime" class="form-control col-md-4" type="text" name="daterange" style="display: none;" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="vi-button-popup" id="btnStockDemandRecordSearch">
+                    <i class="fas fa-search vi-button-icon"></i>
+                    <text class="vi-button-vertical">Search</text>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Button -->
+<div align="center">
+    <nav class="buttonbar-bottom fixed-bottom">
+        <button class="vi-button" data-toggle="modal" data-target="#StockDemandRecordsFilterModal">
+            <i class="fas fa-search vi-button-icon"></i>
+            <text class="vi-button-vertical">Advance Search</text>
+        </button>
+    </nav>
+</div>
+
+<script src="~/js/rsb/StockDemand.js"></script>

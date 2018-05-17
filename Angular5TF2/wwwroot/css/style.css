@@ -1,0 +1,517 @@
+:root {
+    /* Colors. */
+    --vi-main-header: 		#FFFFFF;
+    --vi-main-body: 		#FBFBFB;
+    --vi-main-footer: 		#FFFFFF;
+	--vi-border: 			#D8D8D8;	
+    --vi-error: 			#DD574B;
+    --vi-warning: 			#FFBE00;
+    --vi-success: 			#8DA552;
+    --vi-button: 			#F5F5F5;
+	--vi-button-border: 	#4D575D;
+	--vi-button-icon-color: #4D575D;
+    --vi-service-heading: 	#EF7B10;
+    --vi-orange: 			#ED7B22;		
+}
+
+@font-face {
+    font-family: "VI Segoe UI";
+    src: url('../assets/fonts/segoeui.ttf') format('truetype');
+
+}
+
+@font-face {
+    font-family: "VI Segoe UI Light";
+    src: url('../assets/fonts/segoeuil.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "VI Segoe UI Semilight";
+    src: url('../assets/fonts/segoeuisl.ttf') format('truetype');
+}
+
+html, body, main {
+    height: 100%;
+    font-family: "VI Segoe UI Light", sans-serif;
+}
+
+.vi-main-header {
+    background-color: var(--vi-main-header);
+    max-height: 2em;
+	min-height: 3em;
+	width: 100%;
+    border-bottom: 1px solid #EAEAEA;
+	display:inline-block;
+}
+
+.vi-card-header {
+    background-color: var(--vi-card-header);
+	display: inline-block;
+}
+
+.vi-card-footer {
+    background-color: var(--vi-card-footer);
+    border: none;
+    max-height: 162.69px;
+}
+
+.vi-main-footer {
+    background-color: var(--vi-main-footer);
+    max-height: 50px;
+	position: absolute;	
+}
+
+.vi-main-body {
+    background-color: var(--vi-main-body);
+    padding: 3em;
+	padding-right: 0px;
+	padding-bottom: 7em;
+    height: 100%;
+	width: 100%;
+	position: absolute;	
+}
+
+.vi-card-body {
+    background-color: var(--vi-card-body);
+}
+
+th {
+    background-color: #eaeaea;
+    font-family: "VI Segoe UI Light";
+}
+
+tbody {
+    background-color: white;
+}
+
+.alertImage {
+    width: 150px;
+    height: 150px;
+}
+
+.selected {
+    background: lawngreen;
+}
+
+.icon-error {
+    color: var(--vi-error);
+}
+
+.icon-success {
+    color: var(--vi-success);
+}
+
+.warning {
+    background-color: var(--vi-warning);
+}
+
+.success {
+    background-color: var(--vi-success);
+}
+
+.danger {
+    background-color: var(--vi-error);
+}
+
+.vi-service {
+    color: var(--vi-service-heading);
+}
+
+.vi-applicationLogo {
+    max-height: 1em;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;	
+	margin-left:1em;
+}
+
+.vi-applicationStationName {
+	font-family: "VI Segoe UI Light";
+	font-size: 1em;
+	margin: 0.75em;
+	margin-right:0.25em;
+	margin-left: 0.1em;
+	float:left;
+}
+
+.vi-applicationProductName {
+	font-family: "VI Segoe UI";
+    color: var(--vi-service-heading);
+	font-size: 1em;
+	margin: 0.75em;
+	margin-right: 0.25em;
+	margin-left: -0.25em;
+	float:left;
+}
+
+.vi-button {
+    background-color: var(--vi-button);
+	border-color: var(--vi-button-border); 
+	font-family: "VI Segoe UI Light";
+    min-height: 6em;
+    min-width: 12em;
+    margin: 10px;
+	float:center;
+	border: 1px solid #D8D8D8;
+	border-radius:5px;
+}
+
+.vi-button-vertical {
+	margin-top: 10px;
+	margin-bottom: -10px;
+	display: block;
+}
+
+.vi-button-icon {	
+	color:var(--vi-button-icon-color);
+}
+
+.fa-2x {
+	font-size: 2em;
+}
+
+.fa {
+	position: relative;
+	display: table-cell;
+	width: 4em;
+	height: 2.8em;
+	margin-top: 0.75em;
+	text-align: center;
+	vertical-align: middle;
+	font-size:18px;
+}
+
+.main-menu:hover,nav.main-menu.expanded {
+	width:250px;
+	overflow:visible;
+}
+
+.main-menu {
+	background:#F5F5F5;
+	border-right:1px solid var(--vi-border);
+	position:absolute;
+	top:0em;
+	bottom:0;
+	height:100%;
+	left:0;
+	width:3em;
+	overflow:hidden;
+	-webkit-transition:width .05s linear;
+	transition:width .05s linear;
+	-webkit-transform:translateZ(0) scale(1,1);
+	z-index:1025;
+}
+
+.main-menu>ul {
+	margin:7px 0;
+}
+
+.main-menu li {
+	position:relative;
+	display:block;
+	width:250px;
+}
+
+.main-menu li>a {
+	position:relative;
+	display:table;
+	border-collapse:collapse;
+	border-spacing:0;
+	color:#4D575D;
+	font-family: arial;
+	font-size: 14px;
+	text-decoration:none;
+	-webkit-transform:translateZ(0) scale(1,1);
+	-webkit-transition:all .1s linear;
+	transition:all .1s linear;  
+}
+
+.menu-settings li>a {
+	position:relative;
+	display:table;
+	border-collapse:collapse;
+	border-spacing:0;
+	color: #8DA552;
+	font-family: arial;
+	font-size: 14px;
+	text-decoration:none;
+	-webkit-transform:translateZ(0) scale(1,1);
+	-webkit-transition:all .1s linear;
+	transition:all .1s linear;  
+}
+
+.main-menu .nav-icon {
+	position:relative;
+	display:table-cell;
+	width:60px;
+	height:36px;
+	text-align:center;
+	vertical-align:middle;
+	font-size:18px;
+}
+
+.main-menu .nav-text {
+	position:relative;
+	display:table-cell;
+	vertical-align:center;
+	padding-top: 1em;
+	width:16em;
+	font-family: 'Segoe UI', sans-serif;
+	border-right: 1px solid #D8D8D8;
+}
+
+.main-menu>ul.BottomNav {
+	position:relative;
+	left:0;
+	bottom:0;	
+}
+
+.main-menu>ul.StatusIcons {
+	position:fixed;
+	left:0;
+	bottom:-0.2em;
+	background:white;
+	border-top: 1px solid #D8D8D8;
+	border-bottom: 1px solid #D8D8D8;
+}
+
+.no-touch .scrollable.hover {
+	overflow-y:hidden;
+}
+
+.no-touch .scrollable.hover:hover {
+	overflow-y:auto;
+	overflow:visible;
+}
+
+a:hover,a:focus {
+	text-decoration:none;
+}
+
+nav {
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	-o-user-select:none;
+	user-select:none;
+}
+
+nav ul,nav li {
+	outline:0;
+	margin:0;
+	padding:0;
+}
+.main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
+	color: var(--vi-orange);
+	background-color:#F5F5F5;
+
+}
+.area {
+	float: left;
+	background: #E2E2E2;	
+	width: 100%;
+	height: 100%;
+}
+
+.MenuButton {
+    background: transparent;
+	display: block;
+	color: white;
+    border: none !important;
+  	margin: 0.75em;	
+}
+
+
+/* Hamburger menu styling */
+.menucontainer {
+	background-color: var(--vi-orange);
+    width: 3em;
+    height: 3em;
+	margin-left: 0em;
+	margin-top: -0.75em;
+	margin-bottom: 0em;
+}
+.menuicon {
+	margin-left: 0em;
+	margin-top: 0.95em;
+}
+
+/* Top navigation bar styling */
+.navbar{
+	margin-top: 0em;
+	margin-left: 3em;
+	border-radius: 0px;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #D8D8D8;
+}
+
+.navbar-top{
+	max-height: 3em;
+}
+
+.navbar-fixed-left {
+	width: 3em;
+	margin-top: 3em;	
+	position:fixed;
+	height: 100%;
+	background: #F5F5F5;
+	border-right: 1px solid #D8D8D8;  
+}
+
+.navbar-fixed-left .navbar-nav > li {
+	float: left;  /* Cancel default li float: left */
+	width: Auto;
+}
+
+.navbar-fixed-left + .container {
+  	padding-left: 160px;
+}
+
+/* On using dropdown menu (To right shift popuped) */
+.navbar-fixed-left .navbar-nav > li > .dropdown-menu {
+	margin-top: 0px;
+	margin-left: 140px;
+}
+
+.buttonbar-bottom{
+	background-color: #FFFFFF;
+	border-top: 1px solid var(--vi-border);	
+	height: 7em;
+	margin-left: 3em;
+	text-align: center;
+	width: 100%;
+	border-radius: 0px;
+	z-index:1000 !important;
+}
+
+.searchbox{
+	background-color: #F1F1F1;
+	border: none;
+	padding: 0.25em;
+	font-family: "VI Segoe UI Light";
+	font-size: 16px;
+	padding-left: 16px;
+	padding-right: 16px;		
+}
+
+.searchbutton{
+	color: #9EADB4;
+	margin-left: -0.5em;
+	margin-top: 1em;
+	margin-bottom:1em;
+}
+
+.filterdiv {
+    padding-right: 0.2em;
+    border: 1px solid #bdbdbd;
+    border-radius: 13px;
+    box-shadow: 0 0 0.5px #bdbdbd;
+    display: inline-block;
+    margin-bottom: 0.4em;
+    margin-right: 0.4em;
+}
+
+.filtertag {
+    font-size: 12px !important;
+    vertical-align: middle;
+    display: inline-block;
+    max-width: 100%;
+    margin: 0.3em;
+    padding-left: 0.3em;
+    padding-bottom: 0.1em;
+}
+
+.filtertag > span {
+    display: inline-block;
+    max-width: 94%;
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.filtertag-a {
+    display: inline-block;
+    color: #bbb;
+    cursor: pointer;
+    opacity: 0.6;
+    vertical-align: middle;
+}
+
+
+html,
+body {
+    font-size: 14px !important;
+}
+h1 {
+    font-size: 1.602em;
+}
+h2 {
+    font-size: 1.424em;
+}
+h3 {
+    font-size: 1.266em;
+}
+h4 {
+    font-size: 1.125em;
+}
+h5 {
+    font-size: 0.889em;
+}
+h6 {
+    font-size: 0.79em;
+}
+
+
+@media (min-width: 48em) {
+    h1 {
+        font-size: 2.441em;
+    }
+    h2 {
+        font-size: 1.953em;
+    }
+    h3 {
+        font-size: 1.563em;
+    }
+    h4 {
+        font-size: 1.25em;
+    }
+}
+
+/*// Large devices (desktops, 62em and up)*/
+@media (min-width: 62em) {
+    html,
+    body {
+        font-size: 16px !important;
+    }
+}
+
+/*// Extra large devices (large desktops, 75em and up)*/
+@media (min-width : 75.000em ){
+    html,
+    body {
+        font-size: 18px !important;
+    }
+}
+
+.container-fluid-padding {
+    padding-left: 60px;
+}
+
+.col-md-6-padding {
+    padding-top: 60px;
+}
+
+.vi-button-popup {
+    background-color: var(--vi-button);
+    border-color: var(--vi-button-border);
+    font-family: "VI Segoe UI Light";
+    min-height: 5em;
+    min-width: 10em;
+    border: 1px solid #D8D8D8;
+    border-radius: 5px;
+}
+
+.table-subgrid-background-color {
+    background-color: #EF7B10 !important;
+}
